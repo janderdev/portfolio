@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -36,12 +37,21 @@ export const GlobalStyles = createGlobalStyle`
   ul {
     list-style: none;
   }
-
-  a {
-    text-decoration: none;
+  
+  li {
+    cursor: pointer;
   }
 
   button {
     cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    pointer-events: painted;
+    cursor: pointer;
+    :-webkit-any-link {
+      color: inherit;
+    }
   }
 `;

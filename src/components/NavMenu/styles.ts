@@ -27,7 +27,7 @@ export const Nav = styled.nav`
   }
 
   @media screen and (min-width: 960px) {
-    padding: 0 9.75rem;
+    padding: 0 10rem;
   }
 `;
 
@@ -41,7 +41,7 @@ export const Logo = styled.a`
   }
 `;
 
-export const NavMenu = styled(Logo)<{ open: boolean }>`
+export const NavMenu = styled.div<{ open: boolean }>`
   @media screen and (max-width: 767px) {
     display: grid;
     position: fixed;
@@ -52,15 +52,15 @@ export const NavMenu = styled(Logo)<{ open: boolean }>`
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
     bottom: -100%;
-    bottom: ${({ open }) => (open ? "0" : "-100%")};
-    transition: 0.3s;
+    bottom: ${({ open }) => (open ? "-1px" : "-100%")};
+    transition: ${({ open }) => (open ? "ease-in 0.2s" : "ease-out 0.25s")};
     gap: 1.875rem;
   }
 
   @media screen and (min-width: 767px) {
     top: 0;
-    bottom: initial;
-    svg, #contact-item {
+      svg,
+    #contact-item {
       display: none;
     }
   }
@@ -94,6 +94,7 @@ export const NavItem = styled.li`
 `;
 
 export const ContactButton = styled.a`
+  font-size: ${fonts.desktopSize.small};
   display: flex;
   height: 2rem;
   width: 7rem;
