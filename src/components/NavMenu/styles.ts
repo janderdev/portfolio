@@ -9,7 +9,6 @@ export const Nav = styled.nav`
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 10;
   width: 100%;
   background: ${colors.blue};
   padding: 0 1.5rem;
@@ -31,6 +30,17 @@ export const Nav = styled.nav`
   }
 `;
 
+export const Backdrop = styled.div<{ open: boolean }>`
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    left: 0;
+    background: 0;
+    width: 100%;
+    height: 100vmax;
+    display: ${({ open }) => (open ? "block " : "none")};
+  }
+`;
+
 export const Logo = styled.a`
   color: ${colors.white};
   font-weight: ${fonts.weight.medium};
@@ -42,6 +52,7 @@ export const Logo = styled.a`
 `;
 
 export const NavMenu = styled.div<{ open: boolean }>`
+  z-index: 1000;
   @media screen and (max-width: 767px) {
     display: grid;
     position: fixed;
@@ -53,13 +64,13 @@ export const NavMenu = styled.div<{ open: boolean }>`
     border-radius: 1.5rem 1.5rem 0 0;
     bottom: -100%;
     bottom: ${({ open }) => (open ? "-1px" : "-100%")};
-    transition: ${({ open }) => (open ? "ease-in 0.2s" : "ease-out 0.25s")};
+    transition: all 0.2s;
     gap: 1.875rem;
   }
 
   @media screen and (min-width: 767px) {
     top: 0;
-      svg,
+    svg,
     #contact-item {
       display: none;
     }
