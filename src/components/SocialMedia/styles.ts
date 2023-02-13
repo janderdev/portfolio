@@ -8,7 +8,5 @@ export const SocialMedia = styled.div`
   width: fit-content;
   margin: 0;
   color: ${colors.blue};
-  :hover {
-    color: ${colors.blueLight};
-  }
+  transition: all 0.3s;
 `;

@@ -61,7 +61,25 @@ export const Introduce = styled.div`
 export const TypoCall = styled.div``;
 
 export const TypoName = styled.span`
+  display: inline-block;
   font-weight: ${fonts.weight.semiBold};
+  position: relative;
+  ::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background-image: linear-gradient(to right, ${colors.blue}, ${colors.blueLight});
+    transition: width 0.3s ease-out;
+    height: 4px;
+    border-radius: 1rem;
+  }
+  :hover::before {
+    width: 100%;
+    left:0;
+    right: auto;
+  }
 `;
 
 export const TypoStack = styled.div`
