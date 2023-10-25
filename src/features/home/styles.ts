@@ -4,12 +4,19 @@ import { colors, fonts, theme } from "../../theme";
 export const Container = styled.div`
   display: flex;
   height: 100vh;
-  align-items: center;
+  align-content: center;
+  justify-content: center;
+  column-gap: 4rem;
+  /* flex-wrap: wrap-reverse; */
 
   @media screen and (min-width: 768px) {
     padding: 0 10rem;
   }
-`
+
+  @media screen and (min-width: 1550px) {
+    padding: 0 20rem;
+  }
+`;
 
 export const Content = styled.div`
   display: grid;
@@ -26,9 +33,9 @@ export const Content = styled.div`
 
   @media screen and (min-width: 767px) {
     grid-template-areas:
-    "social introduce"
-    "social description"
-    "social button";
+      "social introduce"
+      "social description"
+      "social button";
     column-gap: 5rem;
   }
 
@@ -70,14 +77,18 @@ export const TypoName = styled.span`
     left: 0;
     bottom: 0;
     width: 0;
-    background-image: linear-gradient(to right, ${colors.blue}, ${colors.blueLight});
+    background-image: linear-gradient(
+      to right,
+      ${colors.blue},
+      ${colors.blueLight}
+    );
     transition: width 0.3s ease-out;
     height: 4px;
     border-radius: 1rem;
   }
   :hover::before {
     width: 100%;
-    left:0;
+    left: 0;
     right: auto;
   }
 `;
@@ -103,4 +114,13 @@ export const Button = styled.div`
   grid-area: button;
   width: 100%;
   display: flex;
+`;
+
+export const Image = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `;

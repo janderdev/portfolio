@@ -22,11 +22,15 @@ export const Nav = styled.nav`
     top: 0;
     bottom: initial;
     background: ${colors.dark};
-    height: 5rem;
+    height: 7rem;
   }
 
   @media screen and (min-width: 960px) {
     padding: 0 10rem;
+  }
+
+  @media screen and (min-width: 1550px) {
+    padding: 0 20rem;
   }
 `;
 
