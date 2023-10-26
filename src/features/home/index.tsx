@@ -3,7 +3,11 @@ import { Button } from "../../components/Button";
 import { SocialMedia } from "../../components/SocialMedia";
 import { iconSizes } from "../../theme";
 import * as Styled from "./styles";
-import { UilMessage } from "@iconscout/react-unicons";
+import {
+  UilMessage,
+  UilMouseAlt,
+  UilArrowDown,
+} from "@iconscout/react-unicons";
 
 export const Home = () => {
   return (
@@ -16,7 +20,7 @@ export const Home = () => {
           <Styled.TypoCall>
             Oi, me chamo <Styled.TypoName>Jander Douglas</Styled.TypoName>
           </Styled.TypoCall>
-          <Styled.TypoStack>Frontend Developer</Styled.TypoStack>
+          <Styled.TypoStack>Full Stack Developer</Styled.TypoStack>
         </Styled.Introduce>
 
         <Styled.Paragraph>
@@ -36,6 +40,12 @@ export const Home = () => {
       <Styled.Image>
         <DevImage />
       </Styled.Image>
+
+      <Styled.ScrollButton>
+        <UilMouseAlt size={iconSizes.normal} />
+        <Styled.ScrollText>Scroll down</Styled.ScrollText>
+        <UilArrowDown size={iconSizes.small} />
+      </Styled.ScrollButton>
     </Styled.Container>
   );
 };

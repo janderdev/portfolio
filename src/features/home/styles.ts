@@ -1,12 +1,15 @@
-import styled, { keyframes } from "styled-components";
-import { colors, fonts, theme } from "../../theme";
+import styled from "styled-components";
+import { colors, fonts } from "../../theme";
 
 export const Container = styled.div`
-  display: flex;
+  display: grid;
   height: 100vh;
   align-content: center;
   justify-content: center;
   column-gap: 4rem;
+  grid-template-areas:
+    "content image"
+    "scroll scroll";
   /* flex-wrap: wrap-reverse; */
 
   @media screen and (min-width: 768px) {
@@ -19,6 +22,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  grid-area: content;
   display: grid;
   grid-template-areas:
     "social introduce"
@@ -117,10 +121,40 @@ export const Button = styled.div`
 `;
 
 export const Image = styled.div`
+  grid-area: image;
   display: flex;
   align-items: center;
   justify-content: center;
+
   @media screen and (max-width: 767px) {
     display: none;
   }
+`;
+
+export const ScrollButton = styled.div`
+  cursor: pointer;
+  color: ${colors.blue};
+  grid-area: scroll;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 200px;
+  gap: 0.5rem;
+  transition: 0.3s;
+  :hover {
+    transform: translateY(0.25rem);
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`;
+
+export const ScrollText = styled.span`
+  color: ${colors.white};
 `;

@@ -47,6 +47,8 @@ export const Backdrop = styled.div<{ open: boolean }>`
 
 export const Logo = styled.a`
   color: ${colors.white};
+  width: 7rem;
+  justify-content: start;
   font-weight: ${fonts.weight.medium};
   transition: 0.2s;
   :hover {
