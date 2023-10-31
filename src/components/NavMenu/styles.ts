@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   left: 0;
   width: 100%;
   background: ${colors.blue};
-  padding: 0 1.5rem;
+  padding: 0 2.5rem;
   align-content: center;
   font-size: ${fonts.mobileSize.small};
   font-weight: ${fonts.weight.medium};

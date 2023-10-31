@@ -6,14 +6,21 @@ export const Container = styled.div`
   height: 100vh;
   align-content: center;
   justify-content: center;
-  column-gap: 4rem;
+  gap: 1rem;
   grid-template-areas:
-    "content image"
-    "scroll scroll";
-  /* flex-wrap: wrap-reverse; */
+      "image image"
+      "content content"
+      "scroll scroll";
 
   @media screen and (min-width: 768px) {
     padding: 0 10rem;
+    column-gap: 4rem;
+  }
+
+  @media screen and (min-width: 1366px) {
+    grid-template-areas:
+      "content image"
+      "scroll scroll";
   }
 
   @media screen and (min-width: 1550px) {
@@ -125,9 +132,14 @@ export const Image = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-self: center;
+  width: fit-content;
+  height: fit-content;
 
-  @media screen and (max-width: 767px) {
-    display: none;
+  @media screen and (max-width: 1366px) {
+    svg {
+      width: 90%;
+    }
   }
 `;
 
