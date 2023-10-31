@@ -8,9 +8,9 @@ export const Container = styled.div`
   justify-content: center;
   gap: 1rem;
   grid-template-areas:
-      "image image"
-      "content content"
-      "scroll scroll";
+    "image image"
+    "content content"
+    "scroll scroll";
 
   @media screen and (min-width: 768px) {
     padding: 0 10rem;
@@ -129,17 +129,15 @@ export const Button = styled.div`
 
 export const Image = styled.div`
   grid-area: image;
-  display: flex;
   align-items: center;
   justify-content: center;
   justify-self: center;
   width: fit-content;
   height: fit-content;
+  display: flex;
 
-  @media screen and (max-width: 1366px) {
-    svg {
-      width: 90%;
-    }
+  @media screen and (max-width: 767px) {
+    display: none;
   }
 `;
 
